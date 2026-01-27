@@ -1,4 +1,4 @@
-Public Projects
+Projects
 ===============
 
 List of active projects:
