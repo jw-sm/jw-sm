@@ -4,7 +4,7 @@ Projects
 List of active projects:
 
 *    Lightweight password hashing utilities for Python [phsh](https://github.com/jw-sm/phsh)
-*    Searchable cve data feed from NIST [vulx](https://github.com/jw-sm/vulx)
+*    Searchable cve data feed from NVD NIST [vulx](https://github.com/jw-sm/vulx)
 
 
 List of inactive/unfinished work:
