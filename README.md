@@ -1,6 +1,10 @@
 Projects
 ===============
 
+n8n Portfolio
+*    811 ticket submission automation tool [US811](https://github.com/jw-sm/US811)
+*    AI-Powered Automation [n8n Workflow (WIP)](https://jw-sm.github.io)
+
 List of active projects:
 
 *    Lightweight password hashing utilities for Python [phsh](https://github.com/jw-sm/phsh)
