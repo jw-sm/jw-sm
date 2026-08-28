@@ -1,21 +1,20 @@
-CTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>My Portfolio</title>
+  <title>n8n Workflow</title>
 
   <script
     type="module"
-    src="https://cdn.jsdelivr.net/npm/@n8n_io/n8n-demo-component/n8n-demo.bundled.js"
-  ></script>
+    src="https://cdn.jsdelivr.net/npm/@n8n_io/n8n-demo-component/n8n-demo.bundled.js">
+  </script>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      font-size: 16px;
       line-height: 1.5;
     }
 
@@ -23,10 +22,6 @@ CTYPE html>
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
-    }
-
-    hr {
-      margin: 40px 0;
     }
 
     n8n-demo {
@@ -39,68 +34,51 @@ CTYPE html>
 
 <body>
 
-  <main>
+<main>
 
-    <h1>AI-Powered Utility Ticket Automation</h1>
+  <h1>AI Utility Ticket Automation</h1>
 
-    <p>
-      An n8n workflow that processes incoming utility requests,
-      extracts information using AI, retrieves ticket data, and
-      routes requests based on their type.
-    </p>
+  <p>
+    An n8n workflow that processes incoming utility requests,
+    extracts information using AI, retrieves ticket data, and
+    routes requests based on their type.
+  </p>
 
-    <p>
-      <strong>Stack:</strong>
-      n8n, AI/LLM, Gmail, Supabase, HubSpot
-    </p>
+  <p>
+    <strong>Stack:</strong>
+    n8n, AI/LLM, Gmail, Supabase, HubSpot
+  </p>
 
-    <hr>
+  <hr>
 
-    <h2>Workflow</h2>
+  <h2>Workflow</h2>
 
-    <div id="workflow">
-      Loading workflow...
-    </div>
+  <n8n-demo id="workflow"></n8n-demo>
 
-    <hr>
+</main>
 
-    <p>
-      <a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY">
-        View source on GitHub
-      </a>
-    </p>
+<script>
+  async function loadWorkflow() {
+    const response = await fetch("./workflows/MAIN-OPS-AI.json");
 
-  </main>
-
-
-  <script>
-    async function loadWorkflow() {
-      const container = document.getElementById("workflow");
-
-      try {
-        const response = await fetch(
-          "./workflows/mUgBDTB9lmg4elug.json"
-        );
-
-        const workflow = await response.json();
-
-        const demo = document.createElement("n8n-demo");
-
-        demo.workflow = workflow;
-        demo.theme = "light";
-
-        container.innerHTML = "";
-        container.appendChild(demo);
-
-      } catch (error) {
-        container.textContent =
-          "Failed to load workflow.";
-      }
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
     }
 
-    loadWorkflow();
-  </script>
+    const workflow = await response.json();
+
+    document
+      .getElementById("workflow")
+      .setAttribute("workflow", JSON.stringify(workflow));
+  }
+
+  loadWorkflow().catch(error => {
+    console.error(error);
+
+    document.getElementById("workflow").innerHTML =
+      "<p>Could not load workflow preview.</p>";
+  });
+</script>
 
 </body>
 </html>
-
