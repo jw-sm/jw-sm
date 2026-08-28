@@ -1,0 +1,106 @@
+CTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>My Portfolio</title>
+
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@n8n_io/n8n-demo-component/n8n-demo.bundled.js"
+  ></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    hr {
+      margin: 40px 0;
+    }
+
+    n8n-demo {
+      display: block;
+      width: 100%;
+      height: 700px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <h1>AI-Powered Utility Ticket Automation</h1>
+
+    <p>
+      An n8n workflow that processes incoming utility requests,
+      extracts information using AI, retrieves ticket data, and
+      routes requests based on their type.
+    </p>
+
+    <p>
+      <strong>Stack:</strong>
+      n8n, AI/LLM, Gmail, Supabase, HubSpot
+    </p>
+
+    <hr>
+
+    <h2>Workflow</h2>
+
+    <div id="workflow">
+      Loading workflow...
+    </div>
+
+    <hr>
+
+    <p>
+      <a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY">
+        View source on GitHub
+      </a>
+    </p>
+
+  </main>
+
+
+  <script>
+    async function loadWorkflow() {
+      const container = document.getElementById("workflow");
+
+      try {
+        const response = await fetch(
+          "./workflows/mUgBDTB9lmg4elug.json"
+        );
+
+        const workflow = await response.json();
+
+        const demo = document.createElement("n8n-demo");
+
+        demo.workflow = workflow;
+        demo.theme = "light";
+
+        container.innerHTML = "";
+        container.appendChild(demo);
+
+      } catch (error) {
+        container.textContent =
+          "Failed to load workflow.";
+      }
+    }
+
+    loadWorkflow();
+  </script>
+
+</body>
+</html>
+
