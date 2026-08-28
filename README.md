@@ -3,7 +3,7 @@ Projects
 
 n8n Portfolio
 *    811 ticket submission automation tool [US811](https://github.com/jw-sm/US811)
-*    AI-Powered Automation [n8n Workflow (WIP)](https://jw-sm.github.io)
+*    AI-Powered Automation Workflow [n8n Workflow (Work In Progress)](https://jw-sm.github.io)
 
 List of active projects:
 
@@ -13,7 +13,6 @@ List of active projects:
 
 List of inactive/unfinished work:
 *    Disassembling Go's assembly code [go-internals](https://github.com/jw-sm/go-internals-lab)
-*    Reverse-engineering state's 811 portals for automation [US811](https://github.com/jw-sm/US811)
 *    Hackattic challenges [hackattic](https://github.com/jw-sm/hackattic)
 *    API for tracking and filtering CVE vulnerabilities [securix](https://github.com/jw-sm/Securix)
 
